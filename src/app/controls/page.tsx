@@ -1,15 +1,19 @@
-import { ControlTable } from '@/components/ControlTable';
 import React from 'react'
+import { ControlTable } from '@/components/ControlTable';
 
 type Props = {}
 
-const Control = (props: Props) => {
+const Controls = (props: Props) => {
     return (
-        <div className='p-4'>
-            <h1 className='text-6xl mb-16'>User Access Control</h1>
-            <ControlTable />
+        <div className='m-4'>
+            <div className='mb-16'>
+                <h1 className='text-6xl'>User Access Controls</h1>
+            </div>
+            <div>
+                <ControlTable />
+            </div>
         </div>
     )
 }
 
-export default Control;
+export default Controls;
