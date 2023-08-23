@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import HealthCheck from '@/components/HealthCheck';
 
 type Props = {}
 
 const AccessReviews = (props: Props) => {
+
     return (
-        <div>AccessReviews</div>
+        <div>AccessReviews {<HealthCheck />}</div>
     )
 }
 
