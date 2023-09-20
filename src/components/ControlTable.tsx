@@ -12,87 +12,59 @@ import {
     Typography,
     Button,
     CardBody,
-    Chip,
     CardFooter
 } from "@material-tailwind/react";
 import Link from "next/link";
 
 
-const TABLE_HEAD: Array<string> = ["Name", "Owner", "Status", "Date Started", "Date Completed"];
+const TABLE_HEAD: Array<string> = ["Name", "Date Uploaded"];
 
 type TableRow = {
     id: string,
     name: string,
-    user: string,
-    complete: boolean,
-    dateStarted: string,
-    dateCompleted: string
+    dateUploaded: string
 }
 
 const TABLE_ROWS: Array<TableRow> = [
     {
         id: "8",
-        name: "2023 Q2 Access Review",
-        user: "Jeremiah Taylor",
-        complete: true,
-        dateStarted: "08/15/23",
-        dateCompleted: "08/20/23"
+        name: "2023 Q2 User Control",
+        dateUploaded: "08/20/23"
     },
     {
         id: "7",
-        name: "2023 Q2 Access Review",
-        user: "Tim Mendenhall",
-        complete: false,
-        dateStarted: "08/15/23",
-        dateCompleted: "08/20/23"
+        name: "2023 Q2 User Control",
+        dateUploaded: "08/20/23"
     },
     {
         id: "6",
-        name: "2023 Q2 Access Review",
-        user: "Jeremiah Taylor",
-        complete: false,
-        dateStarted: "08/15/23",
-        dateCompleted: "08/20/23"
+        name: "2023 Q2 User Control",
+        dateUploaded: "08/20/23"
     },
     {
         id: "5",
-        name: "2023 Q2 Access Review",
-        user: "Jeremiah Taylor",
-        complete: true,
-        dateStarted: "08/15/23",
-        dateCompleted: "08/20/23"
+        name: "2023 Q2 User Control",
+        dateUploaded: "08/20/23"
     },
     {
         id: "4",
-        name: "2023 Q2 Access Review",
-        user: "Tim Mendenhall",
-        complete: false,
-        dateStarted: "08/15/23",
-        dateCompleted: "08/20/23"
+        name: "2023 Q2 User Control",
+        dateUploaded: "08/20/23"
     },
     {
         id: "3",
-        name: "2023 Q2 Access Review",
-        user: "Tim Mendenhall",
-        complete: false,
-        dateStarted: "08/15/23",
-        dateCompleted: "08/20/23"
+        name: "2023 Q2 User Control",
+        dateUploaded: "08/20/23"
     },
     {
         id: "2",
-        name: "2023 Q2 Access Review",
-        user: "Tim Mendenhall",
-        complete: false,
-        dateStarted: "08/15/23",
-        dateCompleted: "08/20/23"
+        name: "2023 Q2 User Control",
+        dateUploaded: "08/20/23"
     },
     {
         id: "1",
-        name: "2023 Q2 Access Review",
-        user: "Tim Mendenhall",
-        complete: false,
-        dateStarted: "08/15/23",
-        dateCompleted: "08/20/23"
+        name: "2023 Q2 User Control",
+        dateUploaded: "08/20/23"
     }
 ];
 
@@ -148,7 +120,7 @@ export function ControlTable() {
                     </thead>
                     <tbody>
                         {TABLE_ROWS.map(
-                            ({ id, name, user, complete, dateStarted, dateCompleted }, index) => {
+                            ({ id, name, dateUploaded }, index) => {
                                 const isLast = index === TABLE_ROWS.length - 1;
                                 const classes = isLast
                                     ? "p-4"
@@ -172,42 +144,12 @@ export function ControlTable() {
                                             </div>
                                         </td>
                                         <td className={classes}>
-                                            <div className="flex flex-col">
-                                                <Typography
-                                                    variant="small"
-                                                    color="blue-gray"
-                                                    className="font-normal"
-                                                >
-                                                    {user}
-                                                </Typography>
-                                            </div>
-                                        </td>
-                                        <td className={classes}>
-                                            <div className="w-max">
-                                                <Chip
-                                                    variant="ghost"
-                                                    size="sm"
-                                                    value={complete ? "complete" : "incomplete"}
-                                                    color={complete ? "green" : "blue-gray"}
-                                                />
-                                            </div>
-                                        </td>
-                                        <td className={classes}>
                                             <Typography
                                                 variant="small"
                                                 color="blue-gray"
                                                 className="font-normal"
                                             >
-                                                {dateStarted}
-                                            </Typography>
-                                        </td>
-                                        <td className={classes}>
-                                            <Typography
-                                                variant="small"
-                                                color="blue-gray"
-                                                className="font-normal"
-                                            >
-                                                {dateCompleted}
+                                                {dateUploaded}
                                             </Typography>
                                         </td>
                                     </tr>
